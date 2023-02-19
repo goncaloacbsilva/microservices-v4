@@ -1,5 +1,4 @@
-# MicroservicesV4
-Microservices developed with NestJS deployed into Kubernetes and controlled using Istio
+![microservices-v4](https://github.com/goncaloacbsilva/microservices-v4/blob/main/rep-img.png?raw=true)
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
