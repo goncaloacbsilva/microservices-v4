@@ -1,0 +1,50 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: poc-gateway
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: poc
+  namespace: default
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - poc-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /service-1
+      rewrite:
+        uri: /api
+      route:
+        - destination:
+            port:
+              number: 3000
+            host: service-1
+            subset: v1
+    - match:
+        - uri:
+            prefix: /service-2
+      rewrite:
+        uri: /api
+      route:
+        - destination:
+            port:
+              number: 3000
+            host: service-2
+            subset: v1

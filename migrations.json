@@ -1,0 +1,12 @@
+{
+  "migrations": [
+    {
+      "cli": "nx",
+      "version": "15.7.2-beta.0",
+      "description": "Add the babelUpwardRootMode option to the build executor options.",
+      "factory": "./src/migrations/update-15-7-2/add-babelUpwardRootMode-flag",
+      "package": "@nrwl/webpack",
+      "name": "add-babelUpwardRootMode-flag"
+    }
+  ]
+}
